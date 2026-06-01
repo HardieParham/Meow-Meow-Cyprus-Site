@@ -3,22 +3,26 @@
 html {
     margin: 0%;
     padding: 0%;
-    background-color: #e0f4fb;
     cursor: url("/cursors/pointer.png"), auto;
-
+    
     a:hover, button:hover {
-    cursor: url("/cursors/grabber.png"), pointer;
+        cursor: url("/cursors/grabber.png"), pointer;
     }
-
+    
     body {
+        background-color: #e0f4fb;
         margin: 0%;
         padding: 0%;
 
         header {
             background-color: #36454f;
             nav {
+                li{
+                    padding-top: 0px;
+                    padding-bottom: 0px;
+                }
                 .nav-img {
-                    max-width: 80px;
+                    max-width: 114px;
                     height: auto;
                 }
                 .nav-item {
