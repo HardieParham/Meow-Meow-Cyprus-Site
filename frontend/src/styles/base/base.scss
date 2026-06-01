@@ -1,0 +1,21 @@
+@import '_variables.scss';
+
+html {
+    margin: 0%;
+    padding: 0%;
+    background-color: $background-color;
+    // cursor: url(../cursor/cursor_red.ico), auto;
+
+
+    body {
+        margin: 0%;
+        padding: 0%;
+
+        
+        .footer{
+            text-align: center;
+            padding: 32px;
+            background-color: white;
+        }
+    }
+}
