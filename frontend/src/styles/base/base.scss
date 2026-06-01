@@ -3,14 +3,16 @@
 html {
     margin: 0%;
     padding: 0%;
-    background-color: $background-color;
-    // cursor: url(../cursor/cursor_red.ico), auto;
+    background-color: #e0f4fb;
+    cursor: url("/cursors/pointer.png"), auto;
 
+    a:hover, button:hover {
+    cursor: url("/cursors/grabber.png"), pointer;
+    }
 
     body {
         margin: 0%;
         padding: 0%;
-
 
         header {
             background-color: #36454f;
