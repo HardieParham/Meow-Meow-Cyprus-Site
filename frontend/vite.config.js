@@ -6,6 +6,8 @@ export default defineConfig({
       input: {
         main: 'index.html',
         about: 'about.html',
+        pets: 'pets.html',
+        contact: 'contact.html',
       }
     }
   }
