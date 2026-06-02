@@ -4,7 +4,7 @@ import { fetchCards } from './main.js'
 // Panel Elements
 const panel = document.getElementById('side-panel')
 const panelName = document.getElementById("panel-name");
-const panelDescription = document.getElementById("panel-description");
+const panelBio = document.getElementById("panel-bio");
 const panelImage = document.getElementById("panel-image");
 const closeBtn = document.getElementById('close-btn')
 
@@ -45,7 +45,7 @@ const cards = await getCards();
 // function to populate side-panel
 function openCardPanel(card) {
     panelName.textContent = card.Name;
-    panelDescription.textContent = card.Description;
+    panelBio.textContent = card.Bio;
     panelImage.src = `/pets/${card.Name.toLowerCase()}.png`;
     panel.classList.add("open");
 }
@@ -55,11 +55,9 @@ function openCardPanel(card) {
 for (const card of cards.available) {
     const clone = template.content.cloneNode(true);
 
-    clone.querySelector(".card-name").textContent =
-        card.Name;
-
-    clone.querySelector(".card-description").textContent =
-        card.Description;
+    clone.querySelector(".card-name").textContent = card.Name;
+    clone.querySelector(".card-age").textContent = "Age: " + card.Age;
+    clone.querySelector(".card-bio").textContent = "Bio: " + card.Bio;
 
     const image = clone.querySelector(".card-image");
     image.src = `/pet-thumbnails/${card.Name.toLowerCase()}_thumb.png`;

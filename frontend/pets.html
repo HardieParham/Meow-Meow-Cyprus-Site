@@ -37,21 +37,25 @@
 
             <template id="card-template">
                 <article class="card">
-                    <header class="card-name" style="color:white;"></header>
+                    <header>
+                        <h3 class="card-name" style="color:white; margin-bottom: 0px;"></h3>
+                    </header>
                     <img class="card-image" style="width:128px; height:128px;" src="">
-                    <p class="card-description"></p>
+                    <p class="card-age"></p>
+                    <p class="card-bio"></p>
                     <footer>
-                        <button class="open-panel-btn">View Details</button>
+                        <button class="open-panel-btn">More Details</button>
                     </footer>
                 </article>
             </template>
+
         </div>
     </main>
 
     <div id="side-panel" class="side-panel">
         <h2 id="panel-name"></h2>
         <img id="panel-image" src="">
-        <p id="panel-description"></p>
+        <p id="panel-bio"></p>
         <button id="close-btn">X</button>
     </div>
 
