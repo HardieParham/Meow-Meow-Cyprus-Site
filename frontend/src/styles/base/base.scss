@@ -80,7 +80,7 @@ html {
 
                     background: whitesmoke;
 
-                    transform: translateY(0%);
+                    transform: translateY(-100%);
                     transition: transform 0.3s ease;
 
                     z-index: 1000;
@@ -89,7 +89,7 @@ html {
                 }
 
                 #mobile-nav.open {
-                    transform: translateY(-100%);
+                    transform: translateY(0%);
                 }
 
                 #mobile-nav ul {
