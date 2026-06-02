@@ -15,18 +15,92 @@ html {
         header {
             background-color: #36454f;
             nav {
+                
                 li{
                     padding-top: 0px;
                     padding-bottom: 0px;
-                }
-                .nav-img {
+                }     
+
+                #nav-img {
                     max-width: 114px;
                     height: auto;
                 }
+
                 .nav-item {
                     color: #e192aa
                 }
             }
+
+            .hamburger {
+                display: none;
+            }
+                
+            .mobile-nav-img {
+                display: none;
+            }           
+
+            #mobile-nav {
+                display: none;
+            }
+
+            @media (max-width: 768px) {
+
+                .desktop-nav {
+                    display: none;
+                }
+
+                .mobile-nav-img {
+                    display: block;                
+                    max-width: 114px;
+                    height: auto;
+                }
+
+                .hamburger {
+                    display: block;
+
+                    position: fixed;
+                    top: 1rem;
+                    right: 1rem;
+
+                    z-index: 1001;
+                }
+
+                #mobile-nav {
+                    display: block;
+
+                    position: fixed;
+                    top: 0;
+                    right: 0;
+                    left: 0;
+
+                    width: 100vw;
+                    height: 200px;
+
+                    padding: 2rem 1rem;
+
+                    background: whitesmoke;
+
+                    transform: translateY(0%);
+                    transition: transform 0.3s ease;
+
+                    z-index: 1000;
+
+                    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.2);
+                }
+
+                #mobile-nav.open {
+                    transform: translateY(-100%);
+                }
+
+                #mobile-nav ul {
+                    display: flex;
+                    flex-direction: column;
+                }
+                #special-li {
+                    color: #e192aa
+                }
+            }
+
         }
 
         main {}
