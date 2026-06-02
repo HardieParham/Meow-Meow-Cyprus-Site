@@ -1,3 +1,4 @@
+// Script property of Cozymugg Software 2026
 import Papa from "papaparse";
 
 // Sheet must be shared and published to web in CSV format first!!
@@ -27,9 +28,9 @@ export async function fetchCards(): Promise<Card[]> {
 }
 
 
-const cards = await fetchCards();
+export const cards = await fetchCards();
 
-for (const card of cards) {
-    console.log(card.Name);
+// for (const card of cards) {
+//     console.log(card.Name);
 
-}
+// }
