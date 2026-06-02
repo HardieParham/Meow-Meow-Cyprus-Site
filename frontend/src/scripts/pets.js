@@ -1,5 +1,5 @@
 // Script property of Cozymugg Software 2026
-import { cards } from './main.js'
+import { fetchCards } from './main.js'
 
 // Panel Elements
 const panel = document.getElementById('side-panel')
@@ -15,8 +15,31 @@ const container = document.getElementById("card-container");
 
 closeBtn.addEventListener('click', () => {
     panel.classList.remove("open");
-    console.log("closed")
 })
+
+
+async function getCards() {
+    const cached = sessionStorage.getItem("cards");
+
+    if (cached) {
+        console.log("Loaded from cache");
+        return JSON.parse(cached);
+    }
+
+    console.log("Fetching from API");
+
+    const cards = await fetchCards();
+
+    sessionStorage.setItem(
+        "cards",
+        JSON.stringify(cards)
+    );
+
+    return cards;
+}
+
+
+const cards = await getCards();
 
 
 // function to populate side-panel

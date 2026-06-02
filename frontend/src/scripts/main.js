@@ -4,6 +4,7 @@ import Papa from "papaparse";
 // Sheet must be shared and published to web in CSV format first!!
 const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQKqrzAw_hgOTMJxjLBAyxhoQMbqZctsEHCFbpwHrQgERn9WNOceq_VVz0nUR-q7MEcAZ1J6-j08Jo1/pub?gid=0&single=true&output=csv";
 
+
 export async function fetchCards() {
     const response = await fetch(SHEET_URL);
     const csvText = await response.text();
@@ -34,4 +35,22 @@ export async function fetchCards() {
     return cardData;
 }
 
-export const cards = await fetchCards();
+// export const cards = await fetchCards();
+
+
+
+async function preloadCards() {
+    // Don't fetch if already cached
+    if (sessionStorage.getItem("cards")) {
+        return;
+    }
+
+    const cards = await fetchCards();
+
+    sessionStorage.setItem(
+        "cards",
+        JSON.stringify(cards)
+    );
+}
+
+preloadCards();
