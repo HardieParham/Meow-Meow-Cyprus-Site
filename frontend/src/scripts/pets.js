@@ -46,7 +46,7 @@ const cards = await getCards();
 function openCardPanel(card) {
     panelName.textContent = card.Name;
     panelBio.textContent = card.Bio;
-    panelImage.src = `/pets/${card.Name.toLowerCase()}.png`;
+    panelImage.src = `/pets/${card.ID}.png`;
     panel.classList.add("open");
 }
 
@@ -60,7 +60,7 @@ for (const card of cards.available) {
     clone.querySelector(".card-bio").textContent = "Bio: " + card.Bio;
 
     const image = clone.querySelector(".card-image");
-    image.src = `/pet-thumbnails/${card.Name.toLowerCase()}_thumb.png`;
+    image.src = `/pet-thumbnails/${card.ID}t.png`;
 
     const button = clone.querySelector(".open-panel-btn")
     button.addEventListener("click", () => {
