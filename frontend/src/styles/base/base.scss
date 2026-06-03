@@ -1,3 +1,13 @@
+:root {
+    --pico-secondary: #e192aa;
+    --pico-secondary-background: #e192aa;
+    --pico-secondary-border: #e192aa;
+    --pico-secondary-hover: #d67a96;
+    --pico-secondary-hover-background: #d67a96;
+    --pico-secondary-hover-border: #d67a96;
+}
+
+
 html {
     margin: 0%;
     padding: 0%;
@@ -50,6 +60,7 @@ html {
                 }
 
                 .mobile-nav-img {
+                    margin-left: 16px;
                     display: block;                
                     max-width: 114px;
                     height: auto;

@@ -12,11 +12,9 @@ const closeBtn = document.getElementById('close-btn')
 const template = document.getElementById("card-template");
 const container = document.getElementById("card-container");
 
-
 closeBtn.addEventListener('click', () => {
     panel.classList.remove("open");
 })
-
 
 async function getCards() {
     const cached = sessionStorage.getItem("cards");
@@ -38,7 +36,6 @@ async function getCards() {
     return cards;
 }
 
-
 const cards = await getCards();
 
 
@@ -56,8 +53,9 @@ for (const card of cards.available) {
     const clone = template.content.cloneNode(true);
 
     clone.querySelector(".card-name").textContent = card.Name;
-    clone.querySelector(".card-age").textContent = "Age: " + card.Age;
-    clone.querySelector(".card-bio").textContent = "Bio: " + card.Bio;
+    clone.querySelector(".card-age").innerHTML = "<b>Age:</b> " + card.Age;
+    clone.querySelector(".card-breed").innerHTML = "<b>Breed:</b> " + card.Breed;
+    clone.querySelector(".card-personality").textContent = card.Personality;
 
     const image = clone.querySelector(".card-image");
     image.src = `/pet-thumbnails/${card.ID}t.png`;
