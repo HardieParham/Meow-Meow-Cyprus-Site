@@ -1,6 +1,101 @@
-main {
-    .hero {
-        width: 100%
-    }
+hr {
+    border: none;
+    height: 2px;        
+    background-color:#36454f;
+}
 
+.secondary-btn {
+    background-color: #e192aa;
+    border-color: #e192aa;
+
+    &:hover {
+        background-color: #d67a96;
+        border-color: #d67a96;
+    }
+}
+
+
+main {
+    section {
+        margin-bottom: 5%;
+
+
+        h1 {
+            text-align: center;
+        }
+
+        .hero-section {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .hero-left {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                max-width: 524px;
+
+                button {
+                    margin-bottom: 8px;
+                }
+            }
+
+            .hero-right {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr); 
+                gap: 2%;
+                max-width: 524px;
+
+                img {
+                    border-radius: 12px;
+                }
+            }
+        }
+        @media (max-width: 768px) {
+
+            .hero-section {
+                flex-direction: column;
+            }
+        }
+
+
+        .help-cards {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            // gap: 12px;
+
+            article {
+                max-width: 280px;
+                
+                header {
+                    text-align: center;
+                }
+
+                p {
+                    height: 160px;
+                }
+
+                header {
+                    color: white
+                }
+                footer {
+                    padding: 4px;
+                }
+            }
+        }
+
+        @media (max-width: 768px) {
+           .help-cards {
+                justify-content: center;
+                article {
+                    p {
+                        
+                        height: 120px;
+                    }
+                }
+            }
+        }
+    }
 }
