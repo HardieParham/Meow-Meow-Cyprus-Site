@@ -3,10 +3,25 @@ import { fetchCards } from './main.js'
 
 // Panel Elements
 const panel = document.getElementById('side-panel')
-const panelName = document.getElementById("panel-name");
-const panelBio = document.getElementById("panel-bio");
-const panelImage = document.getElementById("panel-image");
 const closeBtn = document.getElementById('close-btn')
+const panelName = document.getElementById("panel-name");
+const panelImage = document.getElementById("panel-image");
+const panelBio = document.getElementById("panel-bio");
+const panelBreed = document.getElementById("panel-breed");
+const panelColor = document.getElementById("panel-color");
+const panelSex = document.getElementById("panel-sex");
+const panelNeu = document.getElementById("panel-neutered");
+const panelDOB = document.getElementById("panel-dob");
+const panelVax1 = document.getElementById("panel-vax1");
+const panelVax2 = document.getElementById("panel-vax2");
+const panelRabies = document.getElementById("panel-rabies");
+const panelChip = document.getElementById("panel-microchip");
+const panelPass = document.getElementById("panel-passport");
+const panelCat = document.getElementById("panel-cattest");
+const panelDog = document.getElementById("panel-dogtest");
+const panelChild = document.getElementById("panel-childtest");
+const panelCategory = document.getElementById("panel-category")
+
 
 // Template Elements
 const template = document.getElementById("card-template");
@@ -41,10 +56,29 @@ const cards = await getCards();
 
 // function to populate side-panel
 function openCardPanel(card) {
-    panelName.textContent = card.Name;
-    panelBio.textContent = card.Bio;
-    panelImage.src = `/pets/${card.ID}.png`;
     panel.classList.add("open");
+    panelName.innerHTML = card.Name;
+    panelImage.src = `/pets/${card.ID}.png`;
+    panelBio.innerHTML = "<b>Bio:</b> " + card.Bio;
+    panelBreed.innerHTML = "<b>Breed:</b> " + card.Breed;
+    panelColor.innerHTML = "<b>Colour:</b> " + card.Colour;
+    panelSex.innerHTML = "<b>Sex:</b> " + card.Sex;
+    panelNeu.innerHTML = "<b>Neutered:</b> " + card.Neutered;
+    panelDOB.innerHTML = "<b>DOB:</b> " + card.DOB;
+    panelVax1.innerHTML = "<b>1st Vax:</b> " + card['1st Vax'];
+    panelVax2.innerHTML = "<b>2nd Vax:</b> " + card['2nd Vax'];
+    panelRabies.innerHTML = "<b>Rabies:</b> " + card.Rabies;
+    panelChip.innerHTML = "<b>Microchip:</b> " + card.Microchip;
+    panelPass.innerHTML = "<b>Passport:</b> " + card.Passport;
+    panelCat.innerHTML = "<b>Cat Tested:</b> " + card['Cat Tested'];
+    panelDog.innerHTML = "<b>Dog Tested:</b> " + card['Dog Tested'];
+    panelChild.innerHTML = "<b>Children Tested:</b> " + card['Child Tested'];
+
+    if (card.Category === 'Unavailable') {
+        panelCategory.disabled = true;
+        panelCategory.textContent = 'Unavailable'
+
+    }
 }
 
 
