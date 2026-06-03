@@ -29,6 +29,7 @@ const panelCategory = document.getElementById("panel-category")
 // Template Elements
 const template = document.getElementById("card-template");
 const container = document.getElementById("card-container");
+const secondContainer = document.getElementById("card-container-2");
 
 closeBtn.addEventListener('click', () => {
     panel.classList.remove("open");
@@ -82,4 +83,21 @@ for (const card of cards.available) {
         openCardPanel(card);
     });
     container.appendChild(clone);
+}
+
+// populating adopted pets
+for (const card of cards.unavailable) {
+    const clone = template.content.cloneNode(true);
+
+    clone.querySelector(".card-name").textContent = card.Name;
+    clone.querySelector(".card-age").innerHTML = "<b>Age:</b> " + card.Age;
+    clone.querySelector(".card-breed").innerHTML = "<b>Breed:</b> " + card.Breed;
+    clone.querySelector(".card-personality").textContent = card.Personality;
+
+    const image = clone.querySelector(".card-image");
+    image.src = `/pet-thumbnails/${card.ID}t.png`;
+
+    clone.querySelector("footer").remove();
+
+    secondContainer.appendChild(clone);
 }

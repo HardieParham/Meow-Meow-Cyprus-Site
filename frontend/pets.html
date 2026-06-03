@@ -7,6 +7,7 @@
     <title>Pets</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
     <link rel="stylesheet" href="src/styles/base/base.min.css">
+    <link rel="stylesheet" href="src/styles/pets/pets.min.css">
     <link rel="stylesheet" href="src/styles/components/side-panel/side-panel.min.css">
     <link rel="stylesheet" href="src/styles/components/pet-card/pet-card.min.css">
 </head>
@@ -53,7 +54,7 @@
             <section>
                 <h1>Pets Showcase</h1>
             </section>
-            <div id="card-container" style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 24px;"></div>
+            <div id="card-container" class="flex-container"></div>
 
             <template id="card-template">
                 <article class="pet-card">
@@ -75,6 +76,16 @@
             </template>
 
         </div>
+
+        <div class="container">            
+            <section>
+                <h1>Sucessful Adoptions</h1>
+            </section>
+            <div id="card-container-2" class="flex-container"></div>
+
+        </div>
+
+
     </main>
 
     <div id="side-panel" class="side-panel">
