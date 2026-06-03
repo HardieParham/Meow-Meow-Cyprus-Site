@@ -1,19 +1,27 @@
 // Script property of Cozymugg Software 2026
-import { fetchCards } from './main.js'
+import { getCards } from './getCards.js'
 
+const cards = await getCards();
 
-async function preloadCards() {
-    // Don't fetch if already cached
-    if (sessionStorage.getItem("cards")) {
-        return;
-    }
+// Template Elements
+const template = document.getElementById("card-template");
+const container = document.getElementById("card-container");
 
-    const cards = await fetchCards();
+// populate pet showcase
+for (const card of cards.spotlight) {
+    const clone = template.content.cloneNode(true);
 
-    sessionStorage.setItem(
-        "cards",
-        JSON.stringify(cards)
-    );
+    clone.querySelector(".card-name").textContent = card.Name;
+    clone.querySelector(".card-age").innerHTML = "<b>Age:</b> " + card.Age;
+    clone.querySelector(".card-breed").innerHTML = "<b>Breed:</b> " + card.Breed;
+    clone.querySelector(".card-personality").textContent = card.Personality;
+
+    const image = clone.querySelector(".card-image");
+    image.src = `/pet-thumbnails/${card.ID}t.png`;
+
+    // const button = clone.querySelector(".open-panel-btn")
+    // button.addEventListener("click", () => {
+    //     openCardPanel(card);
+    // });
+    container.appendChild(clone);
 }
-
-preloadCards();

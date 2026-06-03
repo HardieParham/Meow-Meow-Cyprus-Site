@@ -1,0 +1,42 @@
+.pet-card {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+
+    .card-body {
+        height: 376px;
+
+        img {
+            border-radius: 16px;
+            width: 128px;
+            height: 128px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        p {
+            display: -webkit-box;
+            line-clamp: 3;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    }
+
+    @media (max-width: 1023px) {
+        .card-body {
+            height: 340px;
+        }
+    }
+
+    .about-btn {
+        background-color: #e192aa;
+        border-color: #e192aa;
+
+        &:hover {
+            background-color: #d67a96;
+            border-color: #d67a96;
+        }
+    }
+}

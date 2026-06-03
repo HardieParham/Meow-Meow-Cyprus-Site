@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
     <link rel="stylesheet" href="src/styles/base/base.min.css">
     <link rel="stylesheet" href="src/styles/home/home.min.css">
+    <link rel="stylesheet" href="src/styles/components/pet-card/pet-card.min.css">
 </head>
 <body>
     <header>
@@ -51,7 +52,6 @@
     <main>
         <div class="container">
             <section>
-                <h1>Meet Our Friends</h1>
                 <div class="hero-section">
                     <div class="hero-left">
                         <p>Here is some example text. Come meet our friends! We are actively looking for adoptions in Cyprus. See other pages of the site to learn more information!</p>
@@ -71,8 +71,38 @@
             </section>
             <hr/>
             <section>
+                <h1>Meet Our Friends</h1> 
+                <div id="card-container" class="flex-container"></div>
+                <div class="container">
+                    <template id="card-template">
+                        <article class="pet-card">
+                            <header>
+                                <h3 class="card-name" style="color:white; margin-bottom: 0px;"></h3>
+                            </header>
+                            <div class="card-body">
+                                <img class="card-image" src="">
+                                <hr/>
+                                <p class="card-age"></p>
+                                <p class="card-breed"></p>
+                                <p class="card-personality"></p>
+                            </div>
+                            <footer>
+                                <button>View All Pets</button>
+                            </footer>
+                        </article>
+                    </template>
+                </div>
+            </section>
+            <hr/>
+            <section>
                 <h1>Our Mission</h1>
                 <img src="images/banner1.png" style="box-shadow: -8px 8px 12px rgba(0, 0, 0, 0.2); ">
+                <div class="flex-container">
+                    <button>Our Story</button>
+                    <button class="secondary-btn">Our Staff</button>
+                    <button>FAQ</button>
+                </div>
+            
             </section>            
             <hr/>
             <section>
@@ -124,7 +154,7 @@
     </footer>
 
 
-    <script type="module" src="/src/scripts/main.js"></script>
+    <script type="module" src="/src/scripts/navbar.js"></script>
     <script type="module" src="/src/scripts/home.js"></script>
 </body>
 </html>

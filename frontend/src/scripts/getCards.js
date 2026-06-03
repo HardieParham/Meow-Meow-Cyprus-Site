@@ -5,7 +5,7 @@ import Papa from "papaparse";
 const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRahYZZmCAe8h8rtp0kVuwljA0BRHmbCZ5VNFIcTcsxdbRmE6ou7rq7n7cURb4kgS3BRnNSDprh24r7/pub?gid=0&single=true&output=csv";
 
 
-export async function fetchCards() {
+async function fetchCards() {
     const response = await fetch(SHEET_URL);
     const csvText = await response.text();
     const result = Papa.parse(csvText, {
@@ -35,9 +35,22 @@ export async function fetchCards() {
     return cardData;
 }
 
-const mobileNav = document.getElementById("mobile-nav");
-const menuToggle = document.getElementById("menu-toggle");
 
-menuToggle.addEventListener("click", () => {
-    mobileNav.classList.toggle("open");
-});
+export async function getCards() {
+    const cached = sessionStorage.getItem("cards");
+
+    if (cached) {
+        console.log("Loaded from cache");
+        return JSON.parse(cached);
+
+    } else {
+
+        console.log("Fetching from API");
+        const cards = await fetchCards();
+        sessionStorage.setItem(
+            "cards",
+            JSON.stringify(cards)
+        );
+        return cards;
+    }
+}

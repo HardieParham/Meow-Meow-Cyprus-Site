@@ -7,7 +7,8 @@
     <title>Pets</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
     <link rel="stylesheet" href="src/styles/base/base.min.css">
-    <link rel="stylesheet" href="src/styles/pets/pets.min.css">
+    <link rel="stylesheet" href="src/styles/components/side-panel/side-panel.min.css">
+    <link rel="stylesheet" href="src/styles/components/pet-card/pet-card.min.css">
 </head>
 <body>
     <header>
@@ -55,7 +56,7 @@
             <div id="card-container" style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 24px;"></div>
 
             <template id="card-template">
-                <article class="card">
+                <article class="pet-card">
                     <header>
                         <h3 class="card-name" style="color:white; margin-bottom: 0px;"></h3>
                     </header>
@@ -116,6 +117,7 @@
         </div>
     </footer>
 
+    <script type="module" src="/src/scripts/navbar.js"></script>
     <script type="module" src="/src/scripts/pets.js"></script>
 </body>
 </html>
