@@ -14,7 +14,7 @@ for (const card of cards.spotlight) {
     clone.querySelector(".card-name").textContent = card.Name;
     clone.querySelector(".card-age").innerHTML = "<b>Age:</b> " + card.Age;
     clone.querySelector(".card-breed").innerHTML = "<b>Breed:</b> " + card.Breed;
-    clone.querySelector(".card-personality").textContent = card.Personality;
+    clone.querySelector(".card-description").textContent = card.Description;
 
     const image = clone.querySelector(".card-image");
     image.src = `/pet-thumbnails/${card.ID}t.png`;

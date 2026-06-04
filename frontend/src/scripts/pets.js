@@ -58,9 +58,9 @@ function openCardPanel(card) {
     panelDog.innerHTML = "<b>Dog Tested:</b> " + card['Dog Tested'];
     panelChild.innerHTML = "<b>Children Tested:</b> " + card['Child Tested'];
 
-    if (card.Category === 'Unavailable') {
+    if (card.Category === 'Adopted') {
         panelCategory.disabled = true;
-        panelCategory.textContent = 'Unavailable'
+        panelCategory.textContent = 'Adopted'
 
     }
 }
@@ -73,7 +73,7 @@ for (const card of cards.available) {
     clone.querySelector(".card-name").textContent = card.Name;
     clone.querySelector(".card-age").innerHTML = "<b>Age:</b> " + card.Age;
     clone.querySelector(".card-breed").innerHTML = "<b>Breed:</b> " + card.Breed;
-    clone.querySelector(".card-personality").textContent = card.Personality;
+    clone.querySelector(".card-description").textContent = card.Description;
 
     const image = clone.querySelector(".card-image");
     image.src = `/pet-thumbnails/${card.ID}t.png`;
@@ -86,13 +86,13 @@ for (const card of cards.available) {
 }
 
 // populating adopted pets
-for (const card of cards.unavailable) {
+for (const card of cards.adopted) {
     const clone = template.content.cloneNode(true);
 
     clone.querySelector(".card-name").textContent = card.Name;
     clone.querySelector(".card-age").innerHTML = "<b>Age:</b> " + card.Age;
     clone.querySelector(".card-breed").innerHTML = "<b>Breed:</b> " + card.Breed;
-    clone.querySelector(".card-personality").textContent = card.Personality;
+    clone.querySelector(".card-description").textContent = card.Description;
 
     const image = clone.querySelector(".card-image");
     image.src = `/pet-thumbnails/${card.ID}t.png`;

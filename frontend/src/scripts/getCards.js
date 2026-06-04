@@ -17,7 +17,7 @@ async function fetchCards() {
     const cardData = {
         spotlight: [],
         available: [],
-        unavailable: []
+        adopted: []
     };
 
     for (const card of result.data) {
@@ -28,8 +28,8 @@ async function fetchCards() {
         if (card['Category'] === 'Available') {
             cardData.available.push(card)
         }
-        if (card['Category'] === 'Unavailable') {
-            cardData.unavailable.push(card)
+        if (card['Category'] === 'Adopted') {
+            cardData.adopted.push(card)
         }
     }
     return cardData;
