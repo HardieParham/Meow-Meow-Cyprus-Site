@@ -43,7 +43,7 @@ function openCardPanel(card) {
     panel.classList.add("open");
     panelName.innerHTML = card.Name;
     panelImage.src = `/pets/${card.ID}.png`;
-    panelBio.innerHTML = "<b>Bio:</b> " + card.Bio;
+    panelBio.textContent = card.Bio;  //"<b>Bio:</b> " + card.Bio;
     panelBreed.innerHTML = "<b>Breed:</b> " + card.Breed;
     panelColor.innerHTML = "<b>Colour:</b> " + card.Colour;
     panelSex.innerHTML = "<b>Sex:</b> " + card.Sex;
