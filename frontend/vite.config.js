@@ -8,6 +8,7 @@ export default defineConfig({
         about: 'about.html',
         pets: 'pets.html',
         contact: 'contact.html',
+        404: '404.html'
       }
     }
   }
