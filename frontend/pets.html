@@ -19,9 +19,9 @@
             </ul>
 
             <ul class="nav-menu">
-                <li><a href="/" class="nav-item"><strong>Home</strong></a></li>
+                <li><a href="/" class="nav-item">Home</a></li>
                 <li><a href="/about.html" class="nav-item">About Us</a></li>
-                <li><a href="/pets.html" class="nav-item">Adopt a Pet</a></li>
+                <li><a href="/pets.html" class="nav-item"><strong>Adopt a Pet</strong></a></li>
                 <li><a href="/contact.html" class="nav-item">Contact</a></li>
             </ul>
     
@@ -41,7 +41,7 @@
                 <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/about.html">About Us</a></li>
-                <li><a href="/pets.html">Adopt a Pet</a></li>
+                <li><a href="/pets.html"><strong>Adopt a Pet</strong></a></li>
                 <li><a href="/contact.html">Contact</a></li>
                 <li><a href="#" id="special-li">Adopt Now</a></li>
                 </ul>
@@ -51,7 +51,7 @@
 
     <main>
         <div class="container">            
-            <section>
+            <section id="pet-showcase">
                 <h1>Pets Showcase</h1>
             </section>
             <div id="card-container" class="flex-container"></div>
@@ -70,7 +70,7 @@
                     </div>
                     <footer>
                         <button class="open-panel-btn">More Info</button>
-                        <button class="meet-btn">Meet</button>
+                        <button class="meet-btn" disabled>Meet</button>
                     </footer>
                 </article>
             </template>
@@ -78,7 +78,7 @@
         </div>
 
         <div class="container">            
-            <section>
+            <section id="adoptions">
                 <h1>Sucessful Adoptions</h1>
             </section>
             <div id="card-container-2" class="flex-container"></div>
@@ -110,7 +110,7 @@
             <p id="panel-dogtest"></p>
             <p id="panel-childtest"></p>
             <p id="panel-bio"></p>
-            <button id="panel-category">Available</button>
+            <!-- <button id="panel-category">Available</button> -->
 
         </div>
     </div>
