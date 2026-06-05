@@ -4,11 +4,11 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: 'index.html',
-        about: 'about.html',
-        pets: 'pets.html',
-        contact: 'contact.html',
-        404: '404.html'
+        main: 'index',
+        about: 'about',
+        pets: 'pets',
+        contact: 'contact',
+        404: '404'
       }
     }
   }
