@@ -36,8 +36,6 @@ closeBtn.addEventListener('click', () => {
 })
 
 
-
-
 // function to populate side-panel
 function openCardPanel(card) {
     panel.classList.add("open");
@@ -77,6 +75,9 @@ for (const card of cards.available) {
 
     const image = clone.querySelector(".card-image");
     image.src = `/pet-thumbnails/${card.ID}t.png`;
+
+	const meetButtonLink = clone.querySelector(".meet-btn-link");
+	meetButtonLink.href = "mailto:cats@rescueteam.com?subject=" + card.Name +" Adoption Inquiry";
 
     const button = clone.querySelector(".open-panel-btn")
     button.addEventListener("click", () => {

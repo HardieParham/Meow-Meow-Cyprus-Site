@@ -1,3 +1,6 @@
+// DONT DELETE FILE!
+// Vite needs a ts file to compile correctly.
+
 // Script property of Cozymugg Software 2026
 import Papa from "papaparse";
 
