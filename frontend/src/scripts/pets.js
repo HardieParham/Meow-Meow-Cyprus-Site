@@ -35,13 +35,46 @@ const secondContainer = document.getElementById("card-container-2");
 
 closeBtn.addEventListener('click', () => {
     panel.classList.remove("open");
+	resetPanel();
 })
 
 
+function resetPanel() {
+    panelImage.src = "/images/loading_2.gif";
+    panelImage.alt = "Pet photo placeholder";
+
+    panelName.innerHTML = "Loading...";
+    panelBio.textContent = "";
+    panelBreed.innerHTML = "<b>Breed:</b> ";
+    panelColor.innerHTML = "<b>Colour:</b> ";
+    panelSex.innerHTML = "<b>Sex:</b> ";
+    panelNeu.innerHTML = "<b>Neutered:</b> ";
+    panelDOB.innerHTML = "<b>DOB:</b> ";
+    panelVax1.innerHTML = "<b>1st Vax:</b> ";
+    panelVax2.innerHTML = "<b>2nd Vax:</b> ";
+    panelRabies.innerHTML = "<b>Rabies:</b> ";
+    panelChip.innerHTML = "<b>Microchip:</b> ";
+    panelPass.innerHTML = "<b>Passport:</b> ";
+    panelCat.innerHTML = "<b>Cat Tested:</b> ";
+    panelDog.innerHTML = "<b>Dog Tested:</b> ";
+    panelChild.innerHTML = "<b>Children Tested:</b>";
+	panelImagesLink.href = "";
+	panelMeetLink.href = "";
+}
+
+
+
 // function to populate side-panel
-function openCardPanel(card) {
+async function openCardPanel(card) {
+	resetPanel();
     panel.classList.add("open");
-    panelName.innerHTML = card.Name;
+    
+	const img = new Image();
+	img.src = `/pets/${card.ID}.png`;
+	await img.decode();
+	panelImage.src = img.src;
+	
+	panelName.innerHTML = card.Name;
     panelImage.src = `/pets/${card.ID}.png`;
     panelBio.textContent = card.Bio;  //"<b>Bio:</b> " + card.Bio;
     panelBreed.innerHTML = "<b>Breed:</b> " + card.Breed;
@@ -106,3 +139,6 @@ for (const card of cards.adopted) {
 
     secondContainer.appendChild(clone);
 }
+
+
+resetPanel();
