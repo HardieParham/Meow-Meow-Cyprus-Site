@@ -34,8 +34,14 @@
         height: auto;
     }
 
-    .panel-info {
+    .meet-btn {
+        background-color: #e192aa;
+        border-color: #e192aa;
 
+        &:hover {
+            background-color: #d67a96;
+            border-color: #d67a96;
+        }
     }
 
 

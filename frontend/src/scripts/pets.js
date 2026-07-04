@@ -23,7 +23,9 @@ const panelPass = document.getElementById("panel-passport");
 const panelCat = document.getElementById("panel-cattest");
 const panelDog = document.getElementById("panel-dogtest");
 const panelChild = document.getElementById("panel-childtest");
-const panelCategory = document.getElementById("panel-category")
+const panelCategory = document.getElementById("panel-category");
+const panelImagesLink = document.getElementById("panel-images-link");
+const panelMeetLink = document.getElementById("panel-meet-link");
 
 
 // Template Elements
@@ -55,6 +57,8 @@ function openCardPanel(card) {
     panelCat.innerHTML = "<b>Cat Tested:</b> " + card['Cat Tested'];
     panelDog.innerHTML = "<b>Dog Tested:</b> " + card['Dog Tested'];
     panelChild.innerHTML = "<b>Children Tested:</b> " + card['Child Tested'];
+	panelImagesLink.href = card['Images Link'];
+	panelMeetLink.href = "mailto:cats@rescueteam.com?subject=" + card.Name +" Adoption Inquiry";
 
     if (card.Category === 'Adopted') {
         panelCategory.disabled = true;
