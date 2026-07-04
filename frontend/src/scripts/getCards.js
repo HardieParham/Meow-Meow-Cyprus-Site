@@ -21,7 +21,7 @@ async function fetchCards() {
     };
 
     for (const card of result.data) {
-        console.log(card)
+        // console.log(card)
         if (card['Spotlight'] === 'Yes') {
             cardData.spotlight.push(card)
         }

@@ -73,6 +73,7 @@ async function openCardPanel(card) {
 	img.src = `/pets/${card.ID}.png`;
 	await img.decode();
 	panelImage.src = img.src;
+	panelImage.alt = "Main panel image for adoptable pet: " + card.Name;
 	
 	panelName.innerHTML = card.Name;
     panelImage.src = `/pets/${card.ID}.png`;
@@ -112,6 +113,7 @@ for (const card of cards.available) {
 
     const image = clone.querySelector(".card-image");
     image.src = `/pet-thumbnails/${card.ID}t.png`;
+	image.alt = 'Image thumbnail for adoptable pet: ' + card.Name;
 
 	const meetButtonLink = clone.querySelector(".meet-btn-link");
 	meetButtonLink.href = "mailto:cats@rescueteam.com?subject=" + card.Name +" Adoption Inquiry";
@@ -134,6 +136,7 @@ for (const card of cards.adopted) {
 
     const image = clone.querySelector(".card-image");
     image.src = `/pet-thumbnails/${card.ID}t.png`;
+	image.alt = 'Image thumbnail for successful adoption of: ' + card.Name;
 
     clone.querySelector("footer").remove();
 

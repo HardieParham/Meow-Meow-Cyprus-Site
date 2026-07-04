@@ -18,6 +18,7 @@ for (const card of cards.spotlight) {
 
     const image = clone.querySelector(".card-image");
     image.src = `/pet-thumbnails/${card.ID}t.png`;
+	image.alt = 'Thumbnail image for adoptable pet: ' + card.Name;
 
     // const button = clone.querySelector(".open-panel-btn")
     // button.addEventListener("click", () => {
