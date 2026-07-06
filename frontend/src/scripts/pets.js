@@ -40,7 +40,7 @@ closeBtn.addEventListener('click', () => {
 
 
 function resetPanel() {
-    panelImage.src = "/images/loading_2.gif";
+    panelImage.src = "/images/loading_3.png";
     panelImage.alt = "Pet photo placeholder";
 
     panelName.innerHTML = "Loading...";
