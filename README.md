@@ -1,4 +1,4 @@
-# Healing-Hideaway-Massage-Site
+# Meow-Meow-Cyprus-Site
 Public facing Website for shelter cats charity in Paphos, Cyprus. [Link](https://meowmeowcyprus.org/)
 
 
@@ -11,7 +11,7 @@ Public facing Website for shelter cats charity in Paphos, Cyprus. [Link](https:/
 ## Tech Stack
 - Static HTML pages
 - Pico CSS
-- JavaScript
+- JavaScript + TypeScript
 - Vite build tool
 - firebase hosting
 - Google Sheets for dynamic data
